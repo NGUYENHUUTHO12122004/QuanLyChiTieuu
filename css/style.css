@@ -1,0 +1,65 @@
+.add-transaction,
+.add-income {
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+}
+
+.add-transaction label,
+.add-income label {
+  display: block;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 23px;
+  margin-top: 12px;
+}
+
+.add-transaction input[type="number"],
+.add-transaction input[type="date"],
+.add-transaction select,
+.add-transaction textarea,
+.add-income input[type="number"],
+.add-income input[type="date"],
+.add-income select,
+.add-income textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.add-transaction textarea,
+.add-income textarea {
+  height: 60px;
+  resize: vertical;
+}
+
+.add-transaction button,
+.add-income button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-transaction button {
+  background-color: #dc3545;
+}
+.add-transaction button:hover {
+  background-color: #c82333;
+}
+
+.add-income button {
+  background-color: #28a745;
+}
+.add-income button:hover {
+  background-color: #218838;
+}
