@@ -89,9 +89,9 @@ $username = $logged_in ? $_SESSION['username'] : '';
 <body>
 <header>
     <div class="logo">
-        <img src="images/logo.png" alt="Logo">
+        <img src="images/hinhanh.png" alt="Logo">
         <span>Chi tiêu thông minh</span>
-    </div>
+    </div>  
     <nav>
         <a href="index.php">Trang chủ</a>
         <a href="dashboard.php">Dashboard</a>

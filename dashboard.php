@@ -384,6 +384,8 @@ $transactions_result = $conn->query("
             ctx.fillText('Không có dữ liệu chi tiêu tháng này', 150, 100);
         }
     </script>
+
+    
 </body>
 
 </html>
