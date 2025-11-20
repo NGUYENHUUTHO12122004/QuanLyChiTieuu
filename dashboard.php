@@ -295,6 +295,49 @@ $transactions_result = $conn->query("
             </form>
         </section>
 
+        <section style="margin:20px; padding:15px; border:1px solid #ccc;">
+    <h2>Chuyển đổi VND → USD</h2>
+
+    <input id="vnd_input" type="number" placeholder="Nhập số tiền VND" 
+           style="padding:8px; width:200px">
+
+    <button onclick="convertVND()" 
+            style="padding:8px 12px; margin-left:10px; cursor:pointer;">
+        Chuyển đổi
+    </button>
+
+    <p id="convert_result" style="margin-top:10px; font-size:18px; font-weight:bold;"></p>
+</section>
+
+<script>
+function convertVND() {
+    let vnd = document.getElementById("vnd_input").value;
+
+    if (vnd.trim() === "") {
+        alert("Vui lòng nhập số tiền!");
+        return;
+    }
+
+    fetch("convert.php?amount=" + encodeURIComponent(vnd))
+        .then(res => res.json())
+        .then(data => {
+            if (!data.ok) {
+                document.getElementById("convert_result").innerHTML =
+                    "Lỗi chuyển đổi: " + data.error;
+                return;
+            }
+
+            document.getElementById("convert_result").innerHTML =
+                Number(data.vnd).toLocaleString() + " VND = " +
+                "<span style='color:red'>" +
+                Number(data.usd).toLocaleString() + " USD</span>";
+        })
+        .catch(err => {
+            document.getElementById("convert_result").innerHTML = 
+                "Lỗi chuyển đổi!";
+        });
+}
+</script>
         <section class="chart-container">
             <h2>Chi tiêu tháng này</h2>
             <canvas id="expensePieChart"></canvas>
@@ -350,6 +393,7 @@ $transactions_result = $conn->query("
             </tbody>
         </table>
     </section>
+
 
 
     <script>
